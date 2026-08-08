@@ -1,0 +1,166 @@
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #08090d;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+:root,
+[data-theme="dark"] {
+
+  --background: #08090d;
+
+  --text-primary: #f4f5f7;
+  --text-secondary: #a7aab3;
+  --text-muted: #686b75;
+
+  --accent: #8b7cff;
+  --accent-secondary: #5f9dff;
+
+  --accent-soft: rgba(139, 124, 255, 0.11);
+  --accent-shadow: rgba(139, 124, 255, 0.25);
+
+  --glass: rgba(255, 255, 255, 0.035);
+  --glass-strong: rgba(18, 19, 26, 0.78);
+
+  --border: rgba(255, 255, 255, 0.09);
+  --border-hover: rgba(139, 124, 255, 0.4);
+
+  --shadow: rgba(0, 0, 0, 0.4);
+
+  --toggle-background: #151720;
+  --toggle-knob: #272a35;
+}
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+[data-theme="light"] {
+
+  --background: #f3f5f9;
+
+  --text-primary: #15161b;
+  --text-secondary: #5d606a;
+  --text-muted: #9296a1;
+
+  --accent: #6656e8;
+  --accent-secondary: #4385e8;
+
+  --accent-soft: rgba(102, 86, 232, 0.09);
+  --accent-shadow: rgba(102, 86, 232, 0.2);
+
+  --glass: rgba(255, 255, 255, 0.68);
+  --glass-strong: rgba(255, 255, 255, 0.88);
+
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(102, 86, 232, 0.35);
+
+  --shadow: rgba(25, 30, 45, 0.12);
+
+  --toggle-background: #e2e5ec;
+  --toggle-knob: #ffffff;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+
+  background: var(--accent);
+
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible {
+  outline: 2px solid var(--accent);
+
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
